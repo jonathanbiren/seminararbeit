@@ -35,8 +35,6 @@ def get_text_chunks(text):
 
 
 def get_vectorstore(text_chunks):
-    #! You should look into using your own embedder here instead
-    #! of using the paid openAI Embedder (Minute 38 of https://www.youtube.com/watch?v=dXxQ0LR-3Hg&ab_channel=AlejandroAO-Software%26Ai)
     embeddings = OpenAIEmbeddings()
     vectorstore = FAISS.from_texts(texts=text_chunks, embedding=embeddings)
     return vectorstore
